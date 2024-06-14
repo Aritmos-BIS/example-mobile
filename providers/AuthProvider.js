@@ -31,9 +31,9 @@ function AuthProvider({children}){
     }
   }
 
-  async function login(username, password){
+  async function login(email, password){
     setLoading(true);
-    const _user = await authService(username, password)
+    const _user = await authService(email, password)
 
     setUser(_user)
     if(_user){
@@ -45,7 +45,7 @@ function AuthProvider({children}){
 
   }
 
-  async function logout(username, password){
+  async function logout(email, password){
     setLoading(true);
    
     setUser(undefined)

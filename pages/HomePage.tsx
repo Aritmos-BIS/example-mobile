@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
 import { StyleSheet, Text, TextInput, View, TouchableOpacity, ViewProps, ActivityIndicator } from "react-native";
 import demoService from '../services/demoService'
-import { User } from '../types/user.type'
+import { Student } from '../types/user.type'
 // import useAuth from "../hooks/useAuth";
 
 
 function LoginPage() {
     const [loading, setLoading] = useState(true);
-    const [data,  setData] = useState<User | undefined>(undefined);
+    const [data,  setData] = useState< Student | undefined>(undefined);
 
     useEffect(() => {
         handleLoad()
@@ -37,7 +37,7 @@ function LoginPage() {
     return (
         <View style={styles.mainContainer}>
             <View style={styles.loginContainer}>
-                <Text style={styles.loginTitle}>{data?.address?.address}</Text>
+                <Text style={styles.loginTitle}>{data?.name}</Text>
             </View>
         </View>
     );

@@ -40,6 +40,21 @@ interface Hair {
   type: string;
 }
 
+interface Group {
+  id: number;
+  name: string;
+}
+
+export interface Student {
+  id: number;
+  name: string;
+  lastname: string;
+  email: string;
+  additionQuiz: any | null | number;
+  substractionQuiz: any | null | number;
+  group: Group;
+}
+
 export interface User {
   address: Address;
   age: number;

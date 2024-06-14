@@ -11,11 +11,10 @@ async function demoService() {
     
     const { token } = JSON.parse(authDataSerialize)
       
-    const response = await fetch('https://dummyjson.com/auth/me', {
-      method: "GET",
-      headers: { 
-        "Content-Type": "application/json", 
-        'Authorization': `Bearer ${token}`
+    const response = await fetch('http://localhost:3000/api/students/5', {
+      method: 'GET',
+      headers: {
+        Authorization: `Bearer ${token}`,
       },
      
     });
@@ -26,6 +25,7 @@ async function demoService() {
     }
   
     return response.json();
+    
   } catch (error) {
     alert("Error in login")
 
