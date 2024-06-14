@@ -1,6 +1,7 @@
 import { useState } from "react";
-import { StyleSheet, Text, TextInput, View, TouchableOpacity, ViewProps, ActivityIndicator } from "react-native";
+import { StyleSheet, Text, TextInput, View, TouchableOpacity, ViewProps, ActivityIndicator, Image } from "react-native";
 import useAuth from "../hooks/useAuth";
+import icon from '../assets/AritmosLogo.png'
 
 
 
@@ -26,14 +27,15 @@ function LoginPage() {
 
     return (
         <View style={styles.mainContainer}>
+            <Image source={icon} style={styles.iconContainer}/>
             <View style={styles.loginContainer}>
                 <Text style={styles.loginTitle}>Welcome!</Text>
                 <View style={styles.loginInnerContainer}>
-                    <Text style={styles.loginText}>email</Text>
+                    <Text style={styles.loginText}>Username</Text>
                     <TextInput
                         style={styles.loginInput}
                         onChangeText={setEmail}
-                        placeholder="Enter email"
+                        placeholder="Enter username"
                         placeholderTextColor="#A9A9A9"
                     />
                 </View>
@@ -51,23 +53,32 @@ function LoginPage() {
                     <Text style={styles.loginButtonText}>Login</Text>
                 </TouchableOpacity> 
             </View>
+
         </View>
     );
 }
 
 const styles = StyleSheet.create({
+
     mainContainer: {
         flex: 1,
-        justifyContent: 'center',
+        justifyContent: 'flex-end',
         alignItems: 'center',
-        backgroundColor: '#F0F8FF',
-        padding: 20,
+        backgroundColor: '#CB5DF1',
+    },
+    iconContainer: {
+        width: 150, 
+        height: 150,
+        margin: '5%',
     },
     loginContainer: {
-        backgroundColor: '#FFFFFF',
+        backgroundColor: '#8C07DD',
         padding: 20,
-        width: 300,
-        borderRadius: 10,
+        paddingVertical: 50,
+        width: '85%',
+        height: '70%',
+        borderTopStartRadius: 30,
+        borderTopEndRadius: 30,
         shadowColor: '#000',
         shadowOpacity: 0.2,
         shadowRadius: 10,
@@ -81,13 +92,13 @@ const styles = StyleSheet.create({
     loginTitle: {
         fontSize: 36,
         fontWeight: 'bold',
-        color: '#333333',
+        color: '#F7EBFD',
         textAlign: 'center',
         marginBottom: 20,
     },
     loginText: {
         fontSize: 18,
-        color: '#333333',
+        color: '#F7EBFD',
         marginBottom: 5,
     },
     loginInput: {
@@ -101,8 +112,8 @@ const styles = StyleSheet.create({
     },
     loginButton: {
         marginTop: 20,
-        backgroundColor: '#1E90FF',
-        borderRadius: 5,
+        backgroundColor: '#6910A8',
+        borderRadius: 20,
         padding: 15,
         width: '100%',
         alignItems: 'center',

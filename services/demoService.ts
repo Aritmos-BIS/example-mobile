@@ -11,7 +11,7 @@ async function demoService() {
     
     const { token } = JSON.parse(authDataSerialize)
       
-    const response = await fetch('http://localhost:3000/api/students/', {
+    const response = await fetch('http://10.100.0.149:3000/api/students', {
       method: 'GET',
       headers: {
         Authorization: `Bearer ${token}`,
