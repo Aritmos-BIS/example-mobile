@@ -10,7 +10,17 @@ function AppStack() {
   return (
     <Stack.Navigator>
       <Stack.Screen
-        options={{headerRight: () => <Button title='log out' onPress={logout}/>}}
+        options={{
+          headerStyle: {
+            backgroundColor: '#5A189A',
+          },
+          headerTintColor: '#fff',
+          headerTitleStyle: {
+            fontWeight: 'bold',
+          },
+          headerRight: () => <Button title='log out' onPress={logout} />
+        }
+        }
         name="Home"
         component={HomePage}
       />
